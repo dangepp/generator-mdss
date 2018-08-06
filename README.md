@@ -30,7 +30,8 @@ found in ```schemas/json```.
 
 ## Example
 
-Exemplary input for the generator, as well as for the resulting system (disease base) can be found in TODO
+Exemplary input for the generator, as well as for the resulting system (disease base) can be found in ```example-input```
 
+## TODO
 
-TODO: Distill a manual from thesis
+Distill a manual from thesis
