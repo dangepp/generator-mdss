@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "likelihood",
+  "title": "The likelihood Enum to be generated.",
+  "type": "object",
+  "definitions": {
+    "percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+
+  "properties": {
+    "yes": {
+      "description": "The feauture can be found in the disease.",
+      "$ref": "#/definitions/percentage"
+    },
+    "no": {
+      "description": "The feauture can not be found in the disease.",
+      "$ref": "#/definitions/percentage"
+    }
+  },
+  "additionalProperties": {
+    "anyOf": [
+      {
+        "$ref": "#/definitions/percentage"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/definitions/percentage"
+          },
+          "yesGroup": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    ]
+  },
+  "required": [
+    "yes",
+    "no"
+  ]
+  
+}

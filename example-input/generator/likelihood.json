@@ -1,0 +1,8 @@
+{
+	"yes": 1.0,
+	"no": 0.0005,
+	"improbable": {
+		"value": 0.03,
+		"yesGroup": true
+	}
+}

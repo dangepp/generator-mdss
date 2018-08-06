@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "categories",
+  "title": "The input categories to be generated.",
+  "type": "array",
+  "definitions": {
+    "posNumber": {
+			"type": "number",
+			"minimum": 1
+    },
+    "valueWithDependentCategory": {
+			"type": "object",
+			"properties": {
+        "name": {
+          "type": "string"
+        },
+        "dependent": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/category"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      },
+      "required": [
+        "name",
+        "dependent"
+      ],
+      "additionalProperties": false
+    },
+    "valueWithParts": {
+			"type": "object",
+			"properties": {
+        "name": {
+          "type": "string"
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/valueWithParts"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      },
+      "required": [
+        "name",
+        "parts"
+      ],
+      "additionalProperties": false
+		},
+    "category": {
+      "type": "object",
+      "properties": {
+        "patient": {
+          "type":"object",
+          "properties": {
+            "exclusive": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "noHardConflict": {
+          "type": "boolean",
+          "default": false
+        },
+        "weight": {
+          "$ref": "#/definitions/posNumber"
+        },
+        "atLeast": {
+          "$ref": "#/definitions/posNumber"
+        },
+        "name": {
+          "type": "string"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/valueWithDependentCategory"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/definitions/valueWithParts"
+              }
+            ]
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "type": {
+          "enum": [
+            "likelihood",
+            "contain",
+            "ratio"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "values",
+        "type"
+      ],
+      "additionalProperties": false
+    }
+
+  },
+  "items": {
+    "$ref": "#/definitions/category"
+  }
+}

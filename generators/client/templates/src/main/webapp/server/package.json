@@ -1,0 +1,26 @@
+{
+    "name": "@mdss/server",
+    "version": "0.1.0",
+    "description": "Sample Server for decision support system <%= config.baseNames.humanized %>",
+    "author": "Daniel Gepp",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.16.3",
+      "http-proxy-middleware": "^0.18.0",
+      "formidable": "^1.2.1"
+    },
+    "engines": {
+      "node": ">= 8.9.4",
+      "npm": ">= 5.6.0"
+    },
+    "browserslist": [
+      "> 1%",
+      "last 2 versions",
+      "not ie <= 9"
+    ]
+  }
+  

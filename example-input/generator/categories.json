@@ -1,0 +1,120 @@
+[
+  {
+    "name": "site",
+    "values": [
+      "head",
+      {
+        "name": "torso",
+        "parts": [
+          "breast",
+          "stomach"
+        ]
+      },
+      {
+        "name": "arms",
+        "parts": [
+          {
+            "name": "hands",
+            "parts": [
+              "fingers"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "parts": [
+          {
+            "name": "feet",
+            "parts": [
+              "toes"
+            ]
+          },
+          "knees"
+        ]
+      }
+    ],
+    "type": "contain",
+    "weight": 3
+  },
+  {
+    "name": "color",
+    "values": [
+      "red",
+      "white",
+      "brown",
+      "black"
+    ],
+    "type": "likelihood",
+    "atLeast": 1,
+    "patient": {
+      "exclusive": true
+    }
+  },
+  {
+    "name": "amountOfLesions",
+    "values": [
+      "single",
+      "few",
+      {
+        "name": "many",
+        "dependent": [
+          {
+            "name": "formation",
+            "values": [
+              "scattered",
+              "cumulative"
+            ],
+            "type": "likelihood",
+            "atLeast": 1,
+            "patient": {
+              "exclusive": true
+            }
+          }
+        ]
+      }
+    ],
+    "type": "likelihood",
+    "atLeast": 1,
+    "patient": {
+      "exclusive": true
+    }
+  },
+  {
+    "name": "border",
+    "values": [
+      "delimited",
+      "irregular"
+    ],
+    "patient": {
+      "exclusive": true
+    },
+    "type": "likelihood"
+  },
+  {
+    "name": "age",
+    "noHardConflict": true,
+    "values": [
+      "infant",
+      "child",
+      "adult",
+      "elder"
+    ],
+    "patient": {
+      "exclusive": true
+    },
+    "type": "contain",
+    "atLeast": 1
+  },
+  {
+    "name": "gender",
+    "values": [
+      "male",
+      "female"
+    ],
+    "patient": {
+      "exclusive": true
+    },
+    "type": "ratio"
+  }
+]

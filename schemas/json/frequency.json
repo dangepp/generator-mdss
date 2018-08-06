@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/schema",
+	"id": "frequency",
+	"title": "The frequency Enum to be generated.",
+	"type": "object",
+	"definitions": {
+		"percentage": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 1
+		}
+	},
+	"additionalProperties": {
+		"$ref": "#/definitions/percentage"
+	},
+	"minProperties": 1
+}

@@ -1,0 +1,21 @@
+spring:
+    application:
+        name: <%= config.baseNames.base %>
+    jackson:
+        serialization.write_dates_as_timestamps: false
+    servlet:
+        multipart:
+            max-file-size: 10MB
+            max-request-size: 10MB
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            database: diseases
+server:
+    port: 8090
+    servlet:
+      contextPath: /api
+    session:
+        cookie:
+            http-only: true

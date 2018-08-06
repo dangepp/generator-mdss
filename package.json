@@ -1,0 +1,36 @@
+{
+  "name": "generator-mdss",
+  "version": "0.1.0",
+  "author": {
+    "name": "Daniel Gepp",
+    "email": "",
+    "url": "https://github.com/dangepp"
+  },
+  "description": "Code Generator for Medical Decision Support System",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dangepp/generator-mdss.git"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "Java",
+    "Spring",
+    "Spring Boot",
+    "JPA",
+    "Hibernate",
+    "Vue.js"
+  ],
+  "dependencies": {
+    "jsonschema": "^1.2.4",
+    "yeoman-generator": "^2.0.3",
+    "lodash": "^4.17.5",
+    "chalk": "^2.3.2"
+  },
+  "engines": {
+    "node": ">=9.10.1",
+    "npm": ">=5.8.0"
+  }
+}
